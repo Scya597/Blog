@@ -7,6 +7,9 @@
     "start": "nodemon --exec babel-node server.js --ignore public/",
     "dev": "webpack -wd"
   },
+  "engines": {
+    "node": "6.10.0"
+  },
   "author": "Chan Yu An",
   "license": "ISC",
   "dependencies": {

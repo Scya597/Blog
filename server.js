@@ -11,7 +11,7 @@ const server = express();
 
 mongoose.Promise = global.Promise;
 if (process.env.NODE_ENV !== 'test') {
-  mongoose.connect('mongodb://localhost/blog');
+  mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/blog');
 }
 
 server.use(bodyParser.json());
