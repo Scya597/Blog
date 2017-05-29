@@ -67,7 +67,12 @@ class PostSingle extends Component {
           Edit Post
         </button>
         <h1>{post.title}</h1>
-        <p>{post.content}</p>
+        <textarea
+          form="usrform"
+          value={post.content}
+          className="form-control"
+          rows="20"
+        />
       </div>
     );
   }
