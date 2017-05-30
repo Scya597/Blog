@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import ReactHtmlParser from 'react-html-parser';
 
 class PostSingle extends Component {
   constructor(props) {
@@ -49,6 +50,9 @@ class PostSingle extends Component {
       return <div>Loading...</div>;
     }
 
+    const html = post.content.replace(/\r?\n/g, '<br />');
+    console.log(html);
+
     return (
       <div>
         <button className="btn btn-default">
@@ -67,12 +71,7 @@ class PostSingle extends Component {
           Edit Post
         </button>
         <h1>{post.title}</h1>
-        <textarea
-          form="usrform"
-          value={post.content}
-          className="form-control"
-          rows="20"
-        />
+        <div>{ ReactHtmlParser(html) }</div>
       </div>
     );
   }
